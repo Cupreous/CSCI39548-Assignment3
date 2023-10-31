@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom';
 import AccountBalance from './AccountBalance';
 
 const Credits = (props) => {
-  const { credits, updateCredit, currentBalance } = props; //will need to add updateaccountbalance here
+  const { credits, updateCredit, updateCreditBalance, currentBalance } = props;
 
   let creditsView = () => {
     return credits.map((credit) => {  // Extract "id", "amount", "description" and "date" properties of each credits JSON array element
@@ -33,7 +33,7 @@ const Credits = (props) => {
     };
 
     updateCredit(newCredit);
-    //updateaccountbalance
+    updateCreditBalance();
 
     e.target.reset() //resets field
   }
