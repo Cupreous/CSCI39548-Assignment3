@@ -32,6 +32,14 @@ class App extends Component {
   updateDebit = (newDebit) => {
     this.setState({
       debitList: [...this.state.debitList, newDebit]
+    });
+  }
+
+  //Update credit list
+  updateCredit = (newCredit) => {
+    this.setState({
+      creditList: [...this.state.creditList, newCredit]
+
     });  
   }
 
