@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom';
 import AccountBalance from './AccountBalance';
 
 const Credits = (props) => {
-  const { credits, updateCredit, currentBalance } = props; //will need to add the updatecreditlist and updateaccountbalance here
+  const { credits, updateCredit, currentBalance } = props; //will need to add updateaccountbalance here
 
   let creditsView = () => {
     return credits.map((credit) => {  // Extract "id", "amount", "description" and "date" properties of each credits JSON array element
@@ -19,10 +19,12 @@ const Credits = (props) => {
 
   const addCredit = (e) =>
   {
+    //gets values from fields
     e.preventDefault();
     const description = e.target.elements.description.value;
     const amount = Math.round((parseFloat(e.target.elements.amount.value) + Number.EPSILON) * 100) / 100;
 
+    //creates credit var 
     const newCredit = {
       id: Math.random(),
       description: description,
@@ -33,7 +35,7 @@ const Credits = (props) => {
     updateCredit(newCredit);
     //updateaccountbalance
 
-    e.target.reset()
+    e.target.reset() //resets field
   }
   return (
     <div>
