@@ -43,6 +43,20 @@ class App extends Component {
     });  
   }
 
+  //Update credit balance
+  updateCreditBalance = (newCredit) => {
+    this.setState({
+      accountBalance: this.state.accountBalance + newCredit
+    })
+  }
+
+  //Update debit balance
+  updateDebitBalance = (newDebit) => {
+    this.setState({
+      accountBalance: this.state.accountBalance - newDebit
+    });
+  }
+
   // Update state's currentUser (userName) after "Log In" button is clicked
   mockLogIn = (logInInfo) => {  
     const newUser = {...this.state.currentUser};
