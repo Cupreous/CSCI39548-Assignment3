@@ -10,6 +10,13 @@ import AccountBalance from './AccountBalance';
 const Credits = (props) => {
   const { credits, currentBalance } = props;
 
+  let creditsView = () => {
+    return credits.map((credit) => {  // Extract "id", "amount", "description" and "date" properties of each credits JSON array element
+      let date = credit.date.slice(0,10);
+      return <li key={credit.id}>{credit.amount} {credit.description} {date}</li>
+    });
+  }
+
   const addCredit = (e) =>
   {
     e.preventDefault();
@@ -23,7 +30,7 @@ const Credits = (props) => {
       date: new Date().toISOString(),
     };
 
-    //updatedebitlist
+    //updatecreditlist
     //updateaccountbalance
 
     e.target.reset()
@@ -32,7 +39,7 @@ const Credits = (props) => {
     <div>
       <h1>Credits</h1>
       
-      
+      {creditsView()}
 
       <form onSubmit={addCredit}>
         <input type="text" name="description" />
