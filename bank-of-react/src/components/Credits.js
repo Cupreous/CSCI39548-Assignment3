@@ -12,7 +12,21 @@ const Credits = (props) => {
 
   const addCredit = (e) =>
   {
+    e.preventDefault();
+    const description = e.target.elements.description.value;
+    const amount = Math.round((parseFloat(e.target.elements.amount.value) + Number.EPSILON) * 100) / 100;
 
+    const newCredit = {
+      id: Math.random(),
+      description: description,
+      amount: amount,
+      date: new Date().toISOString(),
+    };
+
+    //updatedebitlist
+    //updateaccountbalance
+
+    e.target.reset()
   }
   return (
     <div>
