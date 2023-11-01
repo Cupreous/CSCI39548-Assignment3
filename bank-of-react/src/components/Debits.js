@@ -8,7 +8,7 @@ import AccountBalance from './AccountBalance';
 import {Link} from 'react-router-dom';
 
 const Debits = (props) => {
-  const { debits, updateDebit, currentBalance } = props;
+  const { debits, updateDebit, currentBalance, updateDebitBalance } = props;
 
   // Create the list of Debit items
   let debitsView = () => {
@@ -31,6 +31,7 @@ const Debits = (props) => {
     };
 
    updateDebit(newDebit);
+   updateDebitBalance(newDebit.amount)
 
    e.target.reset()
   };

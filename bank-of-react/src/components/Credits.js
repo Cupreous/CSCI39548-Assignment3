@@ -33,7 +33,7 @@ const Credits = (props) => {
     };
 
     updateCredit(newCredit);
-    updateCreditBalance();
+    updateCreditBalance(newCredit.amount);
 
     e.target.reset() //resets field
   }
